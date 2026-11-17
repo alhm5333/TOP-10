@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>توب 10 مع محمد</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f0e8d6;--card:#faf6ea;--ink:#2a2140;--mut:#8a8296;--pur:#4b2a8c;--gold:#f2c230;--ok:#2e8b57;--bad:#d9475a;--badbg:#f7d9dc;--hid:#e6dcc4;--line:#e3dbc4;--okbg:#fbe9a6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#16121f;--card:#221c31;--ink:#f1ecf9;--mut:#9d94b2;--pur:#8e6bf0;--badbg:#4a2430;--hid:#2c2440;--line:#352c4b;--okbg:#5a4a14}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#16121f;--card:#221c31;--ink:#f1ecf9;--mut:#9d94b2;--pur:#8e6bf0;--badbg:#4a2430;--hid:#2c2440;--line:#352c4b;--okbg:#5a4a14}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Tajawal",system-ui,sans-serif;display:flex;justify-content:center;min-height:100%}
+main{width:100%;max-width:560px;padding:12px 14px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;min-height:34px}
+.ic{display:flex;gap:4px}
+.ib{background:none;border:0;color:var(--ink);font-size:19px;cursor:pointer;padding:4px 7px;border-radius:8px;font-family:inherit}
+.cat{font:inherit;font-size:13px;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:5px 12px;cursor:pointer}
+h1{margin:0;text-align:center;font-size:38px;font-weight:800;line-height:1.1}
+h1 span{display:inline-block;border-bottom:4px solid var(--gold);padding:0 2px}
+.sub{text-align:center;color:var(--mut);font-size:13px;margin:3px 0 12px;font-weight:700}
+.chips{display:none;flex-wrap:wrap;gap:6px;margin-bottom:10px;justify-content:center}
+.chips.open{display:flex}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:5px 11px;font:inherit;font-size:12.5px;cursor:pointer}
+.chip.on{background:var(--pur);color:#fff;border-color:var(--pur)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px;text-align:center;font-weight:800;font-size:17px}
+.row{display:flex;flex-direction:row-reverse;align-items:center;gap:0;margin:10px 0;border:2px solid var(--pur);border-radius:12px;background:var(--card);padding:3px}
+input{flex:1;min-width:0;font:inherit;font-size:16px;padding:8px 10px;border:0;outline:0;background:transparent;color:var(--ink);direction:rtl}
+.go{font:inherit;font-weight:800;font-size:14px;background:var(--pur);color:#fff;border:0;border-radius:9px;padding:8px 16px;cursor:pointer}
+.go:disabled{opacity:.45}
+.msgw{min-height:30px;display:flex;justify-content:center;align-items:center;margin:2px 0 4px}
+.msg{font-weight:700;font-size:12.5px;padding:4px 12px;border-radius:8px;display:none}
+.msg.ok{display:block;background:var(--okbg);color:var(--ink)}
+.msg.no{display:block;background:var(--badbg);color:var(--bad)}
+.msg.nt{display:block;background:var(--hid);color:var(--mut)}
+.st{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--mut);font-weight:700;margin:6px 2px 10px}
+.lives{display:flex;gap:4px;align-items:center;flex:none}
+.d{width:17px;height:17px;border-radius:50%;border:2px solid var(--pur);display:grid;place-items:center}
+.d::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--pur)}
+.d.x{border-color:var(--bad);background:var(--bad);color:#fff;font-size:10px}
+.d.x::after{content:"✕";background:none;width:auto;height:auto;line-height:1}
+.bar{flex:1;height:4px;border-radius:9px;background:var(--hid);overflow:hidden;direction:rtl}
+.bar i{display:block;height:100%;background:var(--pur);width:0;transition:width .3s}
+.grid{display:grid;grid-auto-flow:column;grid-template-rows:repeat(5,auto);gap:7px}
+.it{display:flex;align-items:center;gap:8px;background:var(--hid);border-radius:10px;padding:8px 9px;min-height:40px;font-weight:700;position:relative}
+.n{flex:none;width:23px;height:23px;border-radius:9px;background:var(--card);display:grid;place-items:center;font-size:12px;font-weight:800}
+.it .t{flex:1;font-size:14px}
+.it.h .t{color:var(--mut);letter-spacing:2px;opacity:.7}
+.it.f{background:var(--card);border:1px solid var(--line)}
+.it.f .n{background:var(--gold);color:#2a2140}
+.it .ck{color:var(--ok);font-size:12px}
+.it.m{background:var(--badbg)}
+.it.m .n{background:var(--bad);color:#fff}
+.it .lb{font-size:9px;color:var(--mut);font-weight:500}
+.end{text-align:center;margin-top:12px;font-weight:800;font-size:16px}
+.end b{background:var(--badbg);color:var(--bad);padding:4px 14px;border-radius:8px;display:inline-block}
+.end b.w{background:var(--okbg);color:var(--ink)}
+.foot{display:flex;gap:8px;margin-top:14px}
+.foot button{flex:1;font:inherit;font-weight:800;border-radius:12px;padding:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.foot .pri{background:var(--pur);color:#fff;border-color:var(--pur)}
+.sc{text-align:center;color:var(--mut);font-size:12px;margin-top:12px;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+<div class="top">
+ <div class="ic"><button class="ib" id="rf" title="جولة جديدة">↻</button><button class="ib" id="th" title="الوضع">☾</button></div>
+ <button class="cat" id="ct">☰ الفئات</button>
+</div>
+<h1><span>توب 10</span></h1>
+<div class="sub">مع محمد</div>
+<div class="chips" id="chips"></div>
+<div class="q" id="q"></div>
+<div class="row"><button class="go" id="go">خمّن</button><input id="in" placeholder="اكتب إجابتك..." autocomplete="off"></div>
+<div class="msgw"><div class="msg" id="msg"></div></div>
+<div class="st"><span>الأخطاء:</span><div class="lives" id="lives"></div><div class="bar"><i id="bar"></i></div><div id="cnt"></div></div>
+<div class="grid" id="grid"></div>
+<div class="end" id="end"></div>
+<div class="foot"><button id="giveup">استسلم</button><button class="pri" id="next">جولة جديدة</button></div>
+<div class="sc" id="score"></div>
+</main>
+<script>
+const D=[
+{t:"أشهر 10 أسماء عربية للأولاد",a:["محمد","أحمد","عبدالله|عبد الله","عبدالرحمن|عبد الرحمن","عمر","علي","يوسف","ياسين","آدم|ادم","إياد|اياد"]},
+{t:"أشهر 10 أكلات سعودية",a:["كبسة","مندي","مطبق","جريش","مرقوق","سليق","حنيذ","مفطح","قرصان","سمبوسة|سمبوسه"]},
+{t:"أكثر 10 دول زيارةً للسياح",a:["فرنسا","إسبانيا|اسبانيا","أمريكا|امريكا|الولايات المتحدة","الصين","إيطاليا|ايطاليا","تركيا","المكسيك","ألمانيا|المانيا","تايلند","بريطانيا|انجلترا"]},
+{t:"أشهر 10 ألعاب فيديو",a:["ماينكرافت|ماين كرافت","فورتنايت|فورت نايت","روبلوكس","جي تي ايه|gta|قراند","فيفا|fifa","كول اوف ديوتي|كود","ببجي|pubg","زيلدا","ماريو|سوبر ماريو","فالورانت"]},
+{t:"أشهر 10 أندية كرة قدم",a:["ريال مدريد|الريال","برشلونة","مانشستر يونايتد","ليفربول","بايرن ميونخ|بايرن","يوفنتوس","تشيلسي","أرسنال|ارسنال","باريس سان جيرمان|باريس","الهلال"]},
+{t:"أشهر 10 لاعبي كرة قدم",a:["ميسي","رونالدو|كريستيانو","نيمار","مبابي","هالاند","صلاح","بنزيما","مودريتش","دي بروين","رونالدينيو"]},
+{t:"أشهر 10 تطبيقات",a:["واتساب|واتس اب|واتس","انستقرام|انستا","تيك توك|تيكتوك","سناب شات|سناب","يوتيوب","فيسبوك","تويتر|اكس|x","تيليجرام|تلقرام","نتفلكس","جوجل|قوقل"]},
+{t:"أشهر 10 ماركات سيارات",a:["تويوتا","مرسيدس","بي ام دبليو|bmw","هيونداي","فورد","شيفروليه|شفر","نيسان","لكزس","كيا","هوندا"]},
+{t:"أشهر 10 حيوانات",a:["أسد|اسد","فيل","زرافة","قرد","نمر","حصان","دلفين","دب","ذئب","كلب"]},
+{t:"أشهر 10 مدن سعودية",a:["الرياض","جدة","مكة|مكه المكرمه","المدينة|المدينه المنوره","الدمام","الطائف","أبها|ابها","تبوك","الخبر","بريدة"]},
+{t:"أشهر 10 أنميات",a:["ناروتو","ون بيس","دراغون بول|دراجون بول","هجوم العمالقة","ديث نوت","بليتش","كونان|المحقق كونان","ون بنش مان","ديمون سلاير|قاتل الشياطين","جوجوتسو كايسن"]},
+{t:"أشهر 10 فواكه",a:["تفاح|تفاحه","موز","برتقال","فراولة|فراوله","عنب","مانجو|مانجا","بطيخ","أناناس|اناناس","رمان","تمر"]},
+{t:"أفضل 10 ألعاب في التاريخ",a:["ذا ويتشر|ويتشر|witcher","ريد ديد|ريد ديد ريدمبشن|red dead","جي تي ايه|gta|قراند","ايلدن رينق|ايلدن رنق|elden ring","زيلدا|ذا ليجند اوف زيلدا","ذا لاست اوف اس|لاست اوف اس","سكايريم|skyrim","ماينكرافت|ماين كرافت","غود اوف وور|god of war|قود اوف وار","سوبر ماريو|ماريو"]},
+{t:"أفضل 10 شخصيات في لعبة ماريو",a:["ماريو","لويجي|لويقي","بيتش|الاميرة بيتش","باوزر|بوزر","يوشي","توادت|تود","واريو","دونكي كونج|دونكي كونق","ديزي|دايزي","واليجي|والويجي"]},
+{t:"أفضل 10 شخصيات في لعبة بوكيمون",a:["بيكاتشو|بكاتشو","ليزاردون|تشارزارد","ميوتو|ميو تو","ميو","بلباسور|بولباسور","سكويرتل|سكيرتل","تشارماندر|شارماندر","ايفي|إيفي","سنورلاكس","جينجار|قينقار"]},
+{t:"أفضل 10 شخصيات في كل الألعاب",a:["ماريو|سوبر ماريو","لينك","كريتوس","سونيك|سونك","باك مان|باكمان","لارا كروفت|لارا","ستيف","بيكاتشو|بكاتشو","ماستر تشيف|ماستر شيف","جيرالت|قيرالت|جيرالد"]},
+{t:"أفضل 10 مدن في العالم",a:["باريس","لندن","نيويورك","طوكيو","دبي","روما","اسطنبول|إسطنبول|استنبول","برشلونة","سيدني","سنغافورة|سنقافورة"]},
+{t:"أفضل 10 شخصيات في لعبة ريزدنت إيفل",a:["ليون|ليون كينيدي","كلير|كلير ريدفيلد","جيل|جيل فالنتاين","كريس|كريس ريدفيلد","ويسكر|البرت ويسكر","ادا|ادا وونق|آدا وونق","نيمسيس|نيميسيس|نيمسز","ليدي ديميتريسكو|ديميتريسكو|ليدي ديميترسكو|ليدي دميتريسكو","ايثان|إيثان|ايثان ونترز","مستر اكس|مستر إكس|mr x"]},
+{t:"أفضل 10 شخصيات في لعبة ماينكرافت",a:["ستيف","اليكس|أليكس","كريبر|كريبير","زومبي","هيكل عظمي|سكيليتون","انديرمان|اندرمان","عنكبوت","التنين|ايندر دراجون|ايندر دراقون","ويذر","قروي|فيلاجر"]},
+{t:"أشهر 10 مطاعم ووجبات سريعة",a:["ماكدونالدز|ماك|ماكدونالد","كنتاكي|kfc","البيك","برجر كنج","بيتزا هت","دومينوز","صب واي","ستاربكس","هارديز","دانكن"]},
+{t:"أشهر 10 مشروبات",a:["ماء|مويه|مياه","شاي","قهوة","عصير","بيبسي","كوكاكولا|كوكا كولا|كولا","حليب","سفن اب","ريد بول","لبن"]},
+{t:"أشهر 10 دول عربية",a:["مصر","السعودية","الإمارات|الامارات","المغرب","الأردن|الاردن","لبنان","العراق","قطر","الكويت","تونس"]},
+{t:"أشهر 10 رياضات",a:["كرة القدم|كوره|كورة|football","كرة السلة|سلة","التنس|تنس","السباحة|سباحه","الكرة الطائرة|طائرة","الملاكمة|ملاكمه","الجولف|جولف","الكريكت|كريكت","كرة اليد|يد","ألعاب القوى|العاب القوى|الجري"]},
+{t:"أشهر 10 شركات تقنية",a:["ابل|apple","جوجل|قوقل|google","مايكروسوفت|microsoft","سامسونج|samsung","امازون|amazon","ميتا|meta","تسلا|tesla","انفيديا|nvidia","سوني|sony","هواوي|huawei"]},
+{t:"أشهر 10 كرتون",a:["توم وجيري","سبونج بوب|سبونج","بوكيمون","ميكي ماوس|ميكي","ساندي بل","كابتن ماجد","ماشا والدب|ماشا","عدنان ولينا","طيور الجنة","باباي"]},
+{t:"أشهر 10 أفلام عالمية",a:["تايتانيك","افاتار|أفاتار","الجوكر|جوكر|joker","انسبشن|inception","باتمان|ذا دارك نايت","الاسد الملك|الأسد الملك","هاري بوتر","ماتريكس|ذا ماتريكس","جوراسيك بارك|جوراسيك","افنجرز|المنتقمون"]},
+{t:"أشهر 10 معالم سياحية",a:["برج ايفل|ايفل|برج إيفل","الاهرامات|الأهرامات|الهرم","سور الصين العظيم|سور الصين","برج خليفة","تمثال الحرية","الكولوسيوم","تاج محل","برج بيزا|بيزا","بيج بن|ساعة بيج بن","ماتشو بيتشو"]}
+];
+const $=i=>document.getElementById(i);
+const norm=s=>s.toLowerCase().replace(/[\u064B-\u0652\u0640]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي").replace(/\s+/g," ").trim();
+const keys=s=>{const k=norm(s);return [k,k.replace(/^ال/,""),k.replace(/ /g,""),k.replace(/ /g,"").replace(/^ال/,"")]};
+let ci=-1,sel=-1,found,lives,over,total=0,rounds=0,last=-1;
+function chips(){const el=$("chips");el.innerHTML="";const mk=(l,i)=>{const b=document.createElement("button");b.className="chip"+(sel===i?" on":"");b.textContent=l;b.onclick=()=>{sel=i;chips();el.classList.remove("open");if(!over&&rounds===0&&found.size===0){start()}else{if(!over){rounds++;total+=found.size}start()}};el.appendChild(b)};mk("🎲 منوّع",-1);D.forEach((d,i)=>mk(d.t.replace(/^(أشهر|أكثر|أفضل) 10 /,"").replace(/^شخصيات في لعبة /,"شخصيات "),i))}
+function start(){
+ let n=sel;
+ if(n<0){do{n=Math.floor(Math.random()*D.length)}while(n===last&&D.length>1)}
+ last=n;ci=n;found=new Set();lives=5;over=false;
+ $("in").disabled=false;$("go").disabled=false;$("in").value="";$("in").placeholder="اكتب إجابتك...";$("end").innerHTML="";setMsg("","");
+ $("q").textContent=D[ci].t;$("giveup").style.display="";draw();$("in").focus();
+}
+function setMsg(t,c){const m=$("msg");m.textContent=t;m.className="msg "+c}
+function draw(reveal){
+ const g=$("grid");g.innerHTML="";
+ D[ci].a.forEach((s,i)=>{
+  const f=found.has(i),m=reveal&&!f;
+  const d=document.createElement("div");d.className="it"+(f?" f":"")+(m?" m":"")+(!f&&!m?" h":"");
+  d.innerHTML='<div class="n">'+(i+1)+'</div><div class="t">'+(f||m?s.split("|")[0]:"؟؟؟؟؟؟")+"</div>"+(f?'<span class="ck">✓</span>':"")+(m?'<span class="lb">لم تكتشف</span>':"");
+  g.appendChild(d);
+ });
+ const L=$("lives");L.innerHTML="";for(let i=0;i<5;i++){const d=document.createElement("span");d.className="d"+(i<5-lives?" x":"");L.appendChild(d)}
+ $("cnt").textContent="وجدت "+found.size+" من 10";
+ $("bar").style.width=found.size*10+"%";
+ $("score").textContent="نقاطك: "+total+" • الجولات: "+rounds;
+}
+function finish(win){
+ over=true;$("in").disabled=true;$("go").disabled=true;rounds++;total+=found.size;
+ $("in").placeholder="انتهت الجولة";$("giveup").style.display="none";
+ draw(true);
+ $("end").innerHTML=win?'<b class="w">🔥 ممتاز! كشفت التوب 10 كامل</b>':"<b>انتهت اللعبة</b>";
+ setMsg("","");
+ $("score").textContent="نقاطك: "+total+" • الجولات: "+rounds;
+}
+function guess(){
+ if(over)return;
+ const v=$("in").value;if(!norm(v))return;
+ const gk=keys(v);let hit=-1;
+ D[ci].a.forEach((s,i)=>{if(s.split("|").some(x=>keys(x).some(k=>gk.includes(k))))hit=i});
+ if(hit>=0){
+  if(found.has(hit))setMsg("جبتها قبل ↺","nt");
+  else{found.add(hit);setMsg("إجابة صحيحة ✓","ok")}
+ }else{lives--;setMsg("ليست ضمن التوب 10 ✕","no")}
+ $("in").value="";draw();
+ if(found.size===10)finish(true);else if(lives===0)finish(false);
+}
+$("go").onclick=guess;
+$("in").addEventListener("keydown",e=>{if(e.key==="Enter")guess()});
+$("giveup").onclick=()=>{if(!over)finish(false)};
+$("next").onclick=$("rf").onclick=()=>{if(!over){rounds++;total+=found.size}start()};
+$("ct").onclick=()=>$("chips").classList.toggle("open");
+$("th").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark"};
+chips();start();
+</script>
+</body>
+</html>
